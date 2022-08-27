@@ -2,7 +2,7 @@ import java.util.Arrays;
 public class App {
     public static int numOfRepetitions = 10;
     public static String[] algorithmTitles = {"Bubble Sort", "Selection Sort", "Insertion Sort", "Arrays.sort"};
-    public static int[] sizes = {1000, 2000, 4000, 8000, 16000, 32000, 64000};
+    public static int[] sizes = {1000, 2000, 4000, 8000, 16000, 32000};
     public static double[][] records = new double[algorithmTitles.length][sizes.length];
 
     public static void main(String[] args) {
@@ -128,8 +128,8 @@ public class App {
             }
             A[j] = temp;
 
-            System.out.println(i);
-            display(A);
+            // System.out.println(i);
+            // display(A);
         }
     }
 
