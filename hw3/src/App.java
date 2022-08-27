@@ -6,10 +6,27 @@ public class App {
     public static double[][] records = new double[algorithmTitles.length][sizes.length];
 
     public static void main(String[] args) {
+
+        // debug();
+
         for (int i = algorithmTitles.length - 1; i >= 0; i--) {
             simulate(i);
         }
         showStat();
+    }
+
+    public static void debug() {
+        System.out.println("Debugging...");
+        int [] A = arrayGen(5);
+        display(A);
+        double t0 = System.nanoTime() / 1e6;
+        insertionSort(A);
+        double t1 = System.nanoTime() / 1e6;
+        display(A);
+        System.out.println("Time: " + (t1 - t0) + " ms");
+        // System.out.println("Algorithm Titles: " + Arrays.toString(algorithmTitles));
+        // System.out.println("Sizes: " + Arrays.toString(sizes));
+        // System.out.println("Records: " + Arrays.deepToString(records));
     }
 
     public static void simulate(int algoNo) {
@@ -110,27 +127,11 @@ public class App {
                 j--;
             }
             A[j] = temp;
+
+            System.out.println(i);
+            display(A);
         }
     }
 
 
 }
-// public class Lab4Demo {
-
-// 	public static void main(String[] args) {
-
-// 		System.out.println(pow(2, 10));
-		
-// 	}
-	
-// 	public static double pow(double base, int exponent) {
-		
-// 		if (exponent == 0) return 1;
-// 		double y = pow(base, exponent / 2);
-// 		y = y * y;
-// 		if (exponent % 2 == 1) y *= base;
-// 		return y;
-		
-// 	}
-
-// }
